@@ -24,6 +24,7 @@ docker pull alejandrobr/webpify:latest
 
 > [!IMPORTANT]  
 > Interactive mode will **not work** inside a container.
+>
 > When using Docker, you **must use either `--auto` or `--input`**.  
 
 ## 🚀 Quick Start with Docker Hub
