@@ -11,42 +11,68 @@ Powered by: [webpify-cli on npm](https://www.npmjs.com/package/webpify-cli)
 ![npm license](https://img.shields.io/npm/l/webpify-cli)
 ![npm downloads](https://img.shields.io/npm/dt/webpify-cli)
 
-> [!IMPORTANT]  
-> In development...
+![Docker Version](https://img.shields.io/docker/v/alejandrobr/webpify/latest)
+![Docker Pulls](https://img.shields.io/docker/pulls/alejandrobr/webpify)
+![Docker Stars](https://img.shields.io/docker/stars/alejandrobr/webpify)
+
 
 ## 🐳 Docker Usage
+
+```bash
+docker pull alejandrobr/webpify:latest
+````
 
 > [!IMPORTANT]  
 > Do not pass `--input` together with `--auto`. 
 > They are not compatible. Use one or the other.
 
-### 🚀 Quick Start
+## 🚀 Quick Start with Docker Hub
 
-Convert all supported images in the current directory automatically:
+You can pull and run the Webpify Docker image directly from Docker Hub.
+
+### 1️⃣ Pull the image
 
 ```bash
-docker run --rm -v $(pwd):/work alejandrobr/webpify --auto
+docker pull alejandrobr/webpify:latest
 ````
 
-* Uses `/work` (current directory) as input and output.
-* Fully automatic, no prompts.
 
-### 📂 Custom Input and Output
+### 2️⃣ Run in automatic mode (current directory)
 
-Use custom folders for input and output:
+```bash
+docker run --rm -v $(pwd):/work alejandrobr/webpify:latest --auto
+```
+
+* `/work` maps to your current folder on the host.
+* Automatically converts all supported images in the current folder.
+
+
+
+### 3️⃣ Run with custom input/output folders
 
 ```bash
 docker run --rm \
-  -v ./images:/input \
-  -v ./output:/output \
-  alejandrobr/webpify \
+  -v /path/to/images:/input \
+  -v /path/to/output:/output \
+  alejandrobr/webpify:latest \
   --input /input \
   --output /output
 ```
 
-* Input folder: `/input` (maps to `./images` on host)
-* Output folder: `/output` (maps to `./output` on host)
-* Fully automatic.
+* Input folder `/input` maps to `/path/to/images` on your computer.
+* Output folder `/output` maps to `/path/to/output`.
+* Fully automatic conversion without prompts.
+
+### 4️⃣ Push your own changes (for contributors / CI)
+
+If you build a new image locally and want to push it to Docker Hub:
+
+```bash
+docker build -t alejandrobr/webpify:latest .
+docker push alejandrobr/webpify:latest
+```
+
+* `latest` will always point to the newest build of your Docker image.
 
 ## ℹ️ Notes for Users
 
@@ -125,7 +151,8 @@ docker run --rm \
 ## 🙌 Credits
 
 * [GitHub Webpify CLI](https://github.com/Alejandro-BR/Webpify-cli)
-* [npm Webpify CLI](https://www.npmjs.com/package/webpify-cli)
+* [NPM Webpify CLI](https://www.npmjs.com/package/webpify-cli)
+* [Docker Hub Webpify](https://hub.docker.com/r/alejandrobr/webpify)
 
 [Alejandro Barrionuevo Rosado](https://github.com/Alejandro-BR)
 
