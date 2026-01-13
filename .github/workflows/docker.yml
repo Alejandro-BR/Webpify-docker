@@ -22,7 +22,13 @@ jobs:
           VERSION=$(npm view webpify-cli version)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Build and push Docker image
+      - name: Set up QEMU (for cross-platform emulation)
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image (multi-arch)
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -32,3 +38,5 @@ jobs:
           tags: |
             alejandrobr/webpify:latest
             alejandrobr/webpify:${{ steps.npm.outputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
