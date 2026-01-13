@@ -23,8 +23,8 @@ docker pull alejandrobr/webpify:latest
 ````
 
 > [!IMPORTANT]  
-> Do not pass `--input` together with `--auto`. 
-> They are not compatible. Use one or the other.
+> Interactive mode will **not work** inside a container.
+> When using Docker, you **must use either `--auto` or `--input`**.  
 
 ## 🚀 Quick Start with Docker Hub
 

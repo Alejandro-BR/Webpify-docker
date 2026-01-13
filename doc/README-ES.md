@@ -22,8 +22,10 @@ docker pull alejandrobr/webpify:latest
 ```
 
 > [!IMPORTANTE]
+> El modo interactivo no funcionará dentro de un contenedor.
 > No uses `--input` junto con `--auto`.
 > No son compatibles. Usa **uno u otro**, no ambos.
+
 
 ## 🚀 Inicio rápido desde Docker Hub
 
