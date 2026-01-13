@@ -148,6 +148,12 @@ docker push alejandrobr/webpify:latest
 | HEIC         | JPG (intermediate) → WebP |
 | HEIF         | JPG (intermediate) → WebP |
 
+
+## 🌐 Spanish Version
+
+For the Spanish version of this README, check out:
+[README in Spanish](./doc/README-ES.md)
+
 ## 🙌 Credits
 
 * [GitHub Webpify CLI](https://github.com/Alejandro-BR/Webpify-cli)
@@ -157,3 +163,4 @@ docker push alejandrobr/webpify:latest
 [Alejandro Barrionuevo Rosado](https://github.com/Alejandro-BR)
 
 MIT License – © 2026
+
