@@ -2,18 +2,18 @@
 
 Imagen oficial de Docker para **Webpify CLI**.
 
-Webpify convierte imágenes **PNG, JPG, HEIC y HEIF a WebP**.
+Webpify convierte imágenes **PNG, JPG, HEIC y HEIF a WebP**.  
+
 Esta imagen de Docker ejecuta la CLI respetando su comportamiento original.
 
-Basado en: [webpify-cli en npm](https://www.npmjs.com/package/webpify-cli)
+[![npm version](https://img.shields.io/npm/v/webpify-cli?label=webpify-cli)](https://www.npmjs.com/package/webpify-cli)
+[![npm license](https://img.shields.io/npm/l/webpify-cli)](https://github.com/Alejandro-BR/Webpify-cli/blob/main/LICENCE)
+[![npm downloads](https://img.shields.io/npm/dt/webpify-cli)](https://www.npmjs.com/package/webpify-cli)
+[![Docker Version](https://img.shields.io/docker/v/alejandrobr/webpify/latest)](https://hub.docker.com/r/alejandrobr/webpify)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alejandrobr/webpify)](https://hub.docker.com/r/alejandrobr/webpify)
+[![Docker Stars](https://img.shields.io/docker/stars/alejandrobr/webpify)](https://hub.docker.com/r/alejandrobr/webpify)
 
-![npm version](https://img.shields.io/npm/v/webpify-cli)
-![npm license](https://img.shields.io/npm/l/webpify-cli)
-![npm downloads](https://img.shields.io/npm/dt/webpify-cli)
-
-![Docker Version](https://img.shields.io/docker/v/alejandrobr/webpify/latest)
-![Docker Pulls](https://img.shields.io/docker/pulls/alejandrobr/webpify)
-![Docker Stars](https://img.shields.io/docker/stars/alejandrobr/webpify)
+---
 
 ## 🐳 Uso con Docker
 
@@ -21,16 +21,14 @@ Basado en: [webpify-cli en npm](https://www.npmjs.com/package/webpify-cli)
 docker pull alejandrobr/webpify:latest
 ```
 
-> [!IMPORTANTE]
+> [!IMPORTANT]
 > El modo interactivo no funcionará dentro de un contenedor.
 >
-> No uses `--input` junto con `--auto`.
-> No son compatibles. Usa **uno u otro**, no ambos.
+> Cuando uses Docker, **debes usar `--auto` o `--input`**.
 
+---
 
 ## 🚀 Inicio rápido desde Docker Hub
-
-Puedes descargar y ejecutar la imagen de Webpify directamente desde Docker Hub.
 
 ### 1️⃣ Descargar la imagen
 
@@ -62,23 +60,15 @@ docker run --rm \
 * La carpeta de salida `/output` se mapea a `/ruta/a/salida`.
 * Conversión completamente automática sin necesidad de confirmaciones.
 
-### 4️⃣ Subir tus propios cambios (para contribuyentes / CI)
-
-Si construyes una nueva imagen localmente y quieres subirla a Docker Hub:
-
-```bash
-docker build -t alejandrobr/webpify:latest .
-docker push alejandrobr/webpify:latest
-```
-
-* `latest` siempre apuntará a la versión más reciente de tu imagen Docker.
+---
 
 ## ℹ️ Notas para usuarios
 
 * Esta imagen siempre instala la **última versión** de `webpify-cli` desde npm.
 * Se ejecuta en modo no interactivo al usar `--auto` o `--input`.
 * Ideal para pipelines de CI/CD, scripts o cualquier flujo de trabajo automatizado.
-* Para uso interactivo, puedes omitir las opciones, pero Docker no proporcionará un prompt por defecto.
+
+---
 
 ## 🛠️ Comandos y opciones
 
@@ -91,11 +81,7 @@ docker push alejandrobr/webpify:latest
 
 * `--output "<ruta>"`
   Carpeta personalizada para guardar las imágenes convertidas.
-  Se puede combinar con:
-
-  * `--input`
-  * `--auto`
-  * **Modo interactivo**
+  Se puede combinar con `--input`, `--auto` o el modo interactivo.
 
   ```bash
   webpify --input "ruta/a/imagenes" --output "ruta/a/convertidas"
@@ -138,21 +124,33 @@ docker push alejandrobr/webpify:latest
   webpify --help
   ```
 
+---
+
 ## 📁 Formatos compatibles
 
 | Formato de entrada | Formato de salida       |
-| ------------------ | ----------------------- |
+|--------------------|-------------------------|
 | PNG                | WebP                    |
 | JPG / JPEG         | WebP                    |
 | HEIC               | JPG (intermedio) → WebP |
 | HEIF               | JPG (intermedio) → WebP |
 
-## 🙌 Créditos
+---
 
-* [GitHub Webpify CLI](https://github.com/Alejandro-BR/Webpify-cli)
-* [NPM Webpify CLI](https://www.npmjs.com/package/webpify-cli)
-* [Docker Hub Webpify](https://hub.docker.com/r/alejandrobr/webpify)
+## 🌐 Versión en inglés
+
+Para la versión en inglés de este README:
+[README in English](../README.md)
+
+---
+
+## 🙌 Autor
 
 [Alejandro Barrionuevo Rosado](https://github.com/Alejandro-BR)
 
-Licencia MIT – © 2026
+- [GitHub Webpify CLI](https://github.com/Alejandro-BR/Webpify-cli)
+- [npm](https://www.npmjs.com/package/webpify-cli)
+- [Docker Hub](https://hub.docker.com/r/alejandrobr/webpify)
+- [Wiki](https://github.com/Alejandro-BR/Webpify-cli/wiki)
+
+Licencia MIT – © 2025-2026
